@@ -1,0 +1,20 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Verdura</th>
+                <th>Color</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let verdura of verduras; let i = index">
+                <th>{{ i + 1 }}</th>
+                <td>{{ verdura.verdura }}</td>
+                <td>{{ verdura.color }}</td>
+                <td>{{ verdura.precio }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

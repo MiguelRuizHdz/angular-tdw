@@ -1,0 +1,26 @@
+<h1>*ngIf mostrar = {{ mostrar }}</h1>
+<div>
+    <button (click)="mostrar = !mostrar">Accion</button>
+
+    <p *ngIf="mostrar">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore autem amet vitae placeat, enim similique nisi officiis quod esse incidunt deleniti cupiditate ex architecto eos laborum magnam suscipit dolor aliquid!
+    </p>   
+</div>
+<p *ngIf="mostrar">Mi nombre es {{ variable }}</p>
+
+<br>
+<h1>*ngIf edad = {{ edad }}</h1>
+<div>
+    <button (click)="edad = 18">Mayor de edad</button>
+    <button (click)="edad = 17">Menor de edad</button>
+
+    <p *ngIf="edad >= 18; else menorEdad">
+        Eres Mayor de edad
+    </p>
+    <ng-template #menorEdad>
+        <p>
+            Eres Menor de edad
+        </p>
+    </ng-template>
+    
+</div>
