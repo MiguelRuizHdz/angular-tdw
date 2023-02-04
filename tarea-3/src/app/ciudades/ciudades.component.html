@@ -1,0 +1,18 @@
+<!-- tabla ciudades -->
+<h1>Ciudades de Nuevo León</h1>
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+        <tr>
+            <th>#</th>
+            <th>Ciudad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ciudad of getCiudades; let i = index">
+            <th>{{ i + 1 }}</th>
+            <td>
+                <p class="mb-1">{{ ciudad.name }}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
