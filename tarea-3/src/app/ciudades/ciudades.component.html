@@ -5,13 +5,17 @@
         <tr>
             <th>#</th>
             <th>Ciudad</th>
+            <th>Población</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let ciudad of getCiudades; let i = index">
+        <tr *ngFor="let ciudad of ciudades; let i = index">
             <th>{{ i + 1 }}</th>
             <td>
-                <p class="mb-1">{{ ciudad.name }}</p>
+                <p class="mb-1">{{ ciudad.nombre }}</p>
+            </td>
+            <td>
+                <p class="mb-1">{{ ciudad.poblacion }}</p>
             </td>
         </tr>
     </tbody>
