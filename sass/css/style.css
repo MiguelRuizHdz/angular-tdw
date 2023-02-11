@@ -1,0 +1,97 @@
+@charset "UTF-8";
+body {
+  background: #e5e5e5;
+  font-family: sans-serif;
+}
+
+/*
+* 2. Nesting
+* La idea detrás del concepto CSS Nesting es la posibilidad de crear reglas CSS (bloques de cÓdigo CSS)
+* dentro de otras reglas CSS, anidando código y haciéndolo mucho más fácil de entender y mantener
+* Transforma CSS sin anidar en CSS anidado
+*/
+.container {
+  width: 100%;
+  height: 100%;
+}
+.container nav ul li {
+  font-size: 2em;
+}
+.container nav a {
+  text-decoration: none;
+}
+
+/*
+* 4. Mixin
+* Un mixin es un conjunto coherente de métodos y propiedades implementadas por otras uinterfaces y clases.
+* La forma más común de llamar a un mixin y aplicar esas p´ropiedades y métodos es el include
+* (ejemplo @include nombre_del_mixin ).
+*/
+.transform-1 {
+  width: 40px;
+  height: 50px;
+  background-color: aqua;
+  -ms-transform: rotate(20deg) scale(1.5);
+  -webkit-transform: rotate(20deg) scale(1.5);
+  transform: rotate(20deg) scale(1.5);
+}
+
+.transform-2 {
+  width: 20px;
+  height: 25px;
+  background-color: aqua;
+  -ms-transform: rotate(20deg) scale(1.5);
+  -webkit-transform: rotate(20deg) scale(1.5);
+  transform: rotate(20deg) scale(1.5);
+  font-size: 2em;
+}
+
+/*
+* 5. Extend
+* Permite extender el código de cierta declaración de CSS con nuevos estilos. Las reglas de estilo con las
+* que podremos extender las declaraciones serán tomadas de las clases placeholder
+*/
+.border2, .border1 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  font-size: 1em;
+}
+
+.border2 {
+  margin: 20px;
+}
+
+/*
+* 6. Pseudo selector
+* Una pseudoclase CSS es una palabra clave que se añade a los selectores y que especifica
+* un estado especial del elemento seleccionado.
+*/
+.element a {
+  text-decoration: none;
+  color: red;
+}
+.element a:hover {
+  color: white;
+}
+
+.header {
+  font-size: 6px;
+  height: 75%;
+}
+
+.footer {
+  width: 80%;
+  height: 6px;
+}
+
+p:before {
+  content: "--'";
+  font-family: "Courier New", Courier, monospace;
+}
+p:after {
+  content: "'--";
+  font-family: "Courier New", Courier, monospace;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,124 @@
+// Creacion de Variables
+$primary-color: #e5e5e5;
+$primary-font: sans-serif;
+
+body {
+    background: $primary-color;
+    font-family: $primary-font;
+}
+
+/*
+* 2. Nesting
+* La idea detrás del concepto CSS Nesting es la posibilidad de crear reglas CSS (bloques de cÓdigo CSS)
+* dentro de otras reglas CSS, anidando código y haciéndolo mucho más fácil de entender y mantener
+* Transforma CSS sin anidar en CSS anidado
+*/
+.container {
+    width: 100%;
+    height: 100%;
+
+    nav {
+        ul {
+            li {
+                font-size: 2em;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+/*
+* 4. Mixin
+* Un mixin es un conjunto coherente de métodos y propiedades implementadas por otras uinterfaces y clases.
+* La forma más común de llamar a un mixin y aplicar esas p´ropiedades y métodos es el include
+* (ejemplo @include nombre_del_mixin ).
+*/
+
+@mixin transform_me($prop1, $prop2) {
+    width: $prop1;
+    height: $prop2;
+    background-color: aqua;
+    -ms-transform: rotate(20deg)scale(1.5);
+    -webkit-transform: rotate(20deg)scale(1.5);
+    transform: rotate(20deg)scale(1.5);
+}
+
+.transform-1 {
+    @include transform_me(40px, 50px);
+}
+
+.transform-2 {
+    @include transform_me(20px, 25px);
+    font-size: 2em;
+}
+
+/*
+* 5. Extend
+* Permite extender el código de cierta declaración de CSS con nuevos estilos. Las reglas de estilo con las
+* que podremos extender las declaraciones serán tomadas de las clases placeholder
+*/
+
+%extend-border {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    font-size: 1em;
+}
+
+.border1 {
+    @extend %extend-border;
+}
+
+.border2 {
+    @extend %extend-border;
+    margin: 20px;
+}
+
+/*
+* 6. Pseudo selector
+* Una pseudoclase CSS es una palabra clave que se añade a los selectores y que especifica
+* un estado especial del elemento seleccionado.
+*/ 
+
+.element {
+    a{
+        text-decoration: none;
+        color: red;
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+//* 7. Operadores
+
+.header {
+    //suma
+    font-size: 4px + 2;
+
+    //resta
+    height: 80% - 5;
+}
+
+
+.footer {
+    // multiplicacion
+    width: 20% * 4;
+
+    // division
+    // se debe agregar entre parentesis
+    height: calc(24px / 4);
+}
+
+p {
+    &:before {
+        content: "--" + quote($string: "'");
+        font-family: 'Courier New', Courier, monospace;
+    }
+    &:after {
+        content: quote($string: "'") + "--";
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
